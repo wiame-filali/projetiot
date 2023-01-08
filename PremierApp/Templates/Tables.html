@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+ <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <title>HISTORIQUE</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{%static 'vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{%static 'assets/css/fontawesome.css'%}">
+    <link rel="stylesheet" href="{%static 'assets/css/templatemo-eduwell-style.css'%}">
+    <link rel="stylesheet" href="{%static 'assets/css/owl.css'%}">
+    <link rel="stylesheet" href="{%static 'assets/css/lightbox.css'%}">
+    <link rel="stylesheet" href="{%static 'assets/css/charts.css'%}">
+    <link rel="stylesheet" href="{%static 'assets/css/tables.css'%}">
+
+
+
+<!--
+
+TemplateMo 573 EduWell
+
+https://templatemo.com/tm-573-eduwell
+
+-->
+<style>
+   /* Style des en-têtes du tableau (droite) */
+   thead {
+  font-size : 12px;
+  font-family : Verdana, arial, helvetica, sans-serif;
+  color : #333333;
+  text-align : center;
+  background-color : rgb(244,180,164);
+}
+   table{
+   text-align :center;
+   margin: 150px 100px 100px 0;
+   padding: 2rem;
+
+}
+    tfoot{
+  font-size : 12px;
+  font-family : Verdana, arial, helvetica, sans-serif;
+  color : #333333;
+  text-align : center;
+  background-color : rgb(244,180,164);
+    }
+</style>
+</head>
+<body>
+  <!-- ***** Header Area Start ***** -->
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+      <div class="container">
+          <div class="row">
+              <div class="col-12">
+                  <nav class="main-nav">
+                      <!-- ***** Logo Start ***** -->
+                      <a href="index.html" class="logo">
+                          <img src="{%static 'assets/images/1.png'%}" alt="EduWell Template">
+                      </a>
+                      <!-- ***** Logo End ***** -->
+                      <!-- ***** Menu Start ***** -->
+                     <ul class="nav">
+                          <li class="list"><a href="Tables.html">Historique</a></li>
+                          <li class="graph"><a href="charts.html">Graph</a></li>
+
+                      </ul>
+
+                      <!-- ***** Menu End ***** -->
+                  </nav>
+              </div>
+          </div>
+      </div>
+  </header>
+
+<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+<thead>
+<tr>
+<td><b>N</b></td>
+<td><b>Température</b></td>
+<td><b>Date:Heure</b></td>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<th>N</th>
+<th>Température</th>
+<th>Date:Heure</th>
+</tr>
+</tfoot>
+<tbody>
+{% for i in tab %}
+<tr>
+<td>{{i.id}}</td>
+<td>{{i.temp}}</td>
+<td>{{i.dt}}</td>
+{%endfor%}
+</tbody>
+</table>
+</body>
+</html>
